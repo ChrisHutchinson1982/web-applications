@@ -7,5 +7,17 @@ class Application < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
+
+  get '/hello' do
+    return erb(:index)
+  end
+
+  get '/names' do
+    name1 = params[:name1]
+    name2 = params[:name2]
+    name3 = params[:name3]
+
+    return "#{name1}, #{name2}, #{name3}"
+  end
 end
 
